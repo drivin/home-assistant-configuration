@@ -69,7 +69,6 @@ multiroom:
 other_players:
   name: "other players"
   entities:
-    - media_player.tv
     - media_player.receiver
     - media_player.spotify
 

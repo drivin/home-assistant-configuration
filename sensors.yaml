@@ -8,9 +8,6 @@
   #  state_topic: homegear/0/set/12/1/STATE
   #  name: "Therme 2"
   #  value_template: 'info'
- 
-  - platform: dwd_weather_warnings
-    region_name: Kassel
 
   # Weather prediction
   - platform: yr

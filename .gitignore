@@ -1,0 +1,15 @@
+secrets.yaml
+*.log
+*.pem
+*.db
+.uuid
+*.shm
+deps/
+tts/
+.HA_VERSION
+.spotify-token-cache
+.uuid
+.storage
+*.db-shm
+*.db-wal
+.shopp*

@@ -1,0 +1,68 @@
+    switch.meq1890428_1:
+      hidden: true
+    switch.meq1890428_2:
+      hidden: true
+    light.wz_rgbw_1:
+      friendly_name: "Lampe 1"
+    light.wz_rgbw_2:
+      friendly_name: "Lampe 2"
+    light.wohnzimmer_stehlampe:
+      friendly_name: "Stehlampe"
+    light.iris:
+      friendly_name: "Iris"
+    light.sz_rgbw_1:
+      friendly_name: "Lampe 1"
+    light.sz_rgbw_2:
+      friendly_name: "Lampe 2"
+    light.bad_tinker:
+      friendly_name: "Lampe"
+    light.bad_pino:
+      friendly_name: "Lampe"
+    light.wohnzimmer:
+      hidden: true
+    light.badezimmer_tinker:
+      hidden: true
+    light.Schlafzimmer:
+      hidden: true
+    light.HPMusicGroup:
+      hidden: true
+    climate.keq0961346:
+      friendly_name: "Kueche"
+    climate.keq0961015:
+      friendly_name: "Heizung"
+    climate.keq0651548:
+      friendly_name: "Heizung links"
+    climate.keq0653316:
+      friendly_name: "Heizung rechts"
+#
+    climate.leq0003203:
+      friendly_name: "Schlafzimmer Wandthermostat"
+    climate.leq1204934:
+      friendly_name: "Ankleidezimmer"
+    climate.leq1204884:
+      friendly_name: "Heizung"
+    climate.leq1204674:
+      friendly_name: "Arbeitszimmer"
+    climate.keq0574494:
+      friendly_name: "Heizung links"
+    climate.keq0961116:
+      friendly_name: "Heizung rechts"
+    switch.keq1109860: #ap schalter
+      friendly_name: "Tinker"
+    switch.keq1109883: #ap schalter
+      friendly_name: "Pino"
+    sun.sun:
+      friendly_name: Sonnenstand
+    sensor.yr_symbol:
+      friendly_name: Wetter
+    camera.3ddrucker_livestream:
+      friendly_name: Stream
+    sensor.leq0003203_humidity:
+      friendly_name: Luftfeuchtigkeit
+#
+    media_player.robotron:
+      friendly_name: VolumioZero
+    media_player.volumioone:
+      friendly_name: VolumioOne
+    media_player.squeezebox_radio:
+      friendly_name: VolumioTwo

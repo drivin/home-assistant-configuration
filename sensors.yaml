@@ -1,0 +1,141 @@
+
+  #- platform: mqtt
+  #  state_topic: homegear/0/set/11/1/STATE
+  #  name: "Therme 1"
+  #  value_template: 'info'
+
+  #- platform: mqtt
+  #  state_topic: homegear/0/set/12/1/STATE
+  #  name: "Therme 2"
+  #  value_template: 'info'
+ 
+  - platform: dwd_weather_warnings
+    region_name: Kassel
+
+  # Weather prediction
+  - platform: yr
+    friendly_name: Wetter    
+
+  - platform: mqtt
+    state_topic: 'homegear/0/plain/0/-1/Valve_Heater_On_Pos'
+    name: 'Heizung EIN Ventilstellung'
+    value_template: 'payload'
+
+  - platform: mqtt
+    state_topic: 'ds18b20/28-000004673ac5/temperature'
+    name: Aussentemperatur    
+    unit_of_measurement: "°C"
+
+
+  - platform: template
+    sensors:
+      kueche_valve:
+        value_template: '{{ states.climate.keq0961346.attributes.valve }}'
+        entity_id: climate.keq0961346
+        friendly_name: 'Küche'
+        unit_of_measurement: '%'
+
+      bad_carina_valve:
+        value_template: '{{ states.climate.keq0961015.attributes.valve }}'
+        entity_id: climate.keq0961015
+        friendly_name: 'Bad Carina'
+        unit_of_measurement: '%'
+
+      schlafzimmer_links_valve:
+        value_template: '{{ states.climate.keq0651548.attributes.valve }}'
+        entity_id: climate.keq0651548
+        friendly_name: 'Schlafzimmer links'
+        unit_of_measurement: '%'
+
+      schlafzimmer_rechts_valve:
+        value_template: '{{ states.climate.keq0653316.attributes.valve }}'
+        entity_id: climate.keq0653316
+        friendly_name: 'Schalfzimmer rechts'
+        unit_of_measurement: '%'
+
+      ankleidezimmer_valve:
+        value_template: '{{ states.climate.leq1204934.attributes.valve }}'
+        entity_id: climate.leq1204934
+        friendly_name: 'Ankleidezimmer'
+        unit_of_measurement: '%'
+
+      bad_pino_valve:
+        value_template: '{{ states.climate.leq1204884.attributes.valve }}'
+        entity_id: climate.leq1204884
+        friendly_name: 'Bad Pino'
+        unit_of_measurement: '%'
+
+      buero_valve:
+        value_template: '{{ states.climate.leq1204674.attributes.valve }}'
+        entity_id: climate.leq1204674
+        friendly_name: 'Büro'
+        unit_of_measurement: '%'
+
+      wohnzimmer_links_valve:
+        value_template: '{{ states.climate.keq0574494.attributes.valve }}'
+        entity_id: climate.keq0574494
+        friendly_name: 'Wohnzimmer links'
+        unit_of_measurement: '%'
+
+      wohnzimmer_rechts_valve:
+        value_template: '{{ states.climate.keq0961116.attributes.valve }}'
+        entity_id: climate.keq0961116
+        friendly_name: 'Wohnzimmer rechts'
+        unit_of_measurement: '%'
+
+
+      kueche_battery:
+        value_template: '{{ states.climate.keq0961346.attributes.battery }}'
+        entity_id: climate.keq0961346
+        friendly_name: 'Küche'
+        unit_of_measurement: 'V'
+
+      bad_carina_battery:
+        value_template: '{{ states.climate.keq0961015.attributes.battery }}'
+        entity_id: climate.keq0961015
+        friendly_name: 'Bad Carina'
+        unit_of_measurement: 'V'
+
+      schlafzimmer_links_battery:
+        value_template: '{{ states.climate.keq0651548.attributes.battery }}'
+        entity_id: climate.keq0651548
+        friendly_name: 'Schlafzimmer links'
+        unit_of_measurement: 'V'
+
+      schlafzimmer_rechts_battery:
+        value_template: '{{ states.climate.keq0653316.attributes.battery }}'
+        entity_id: climate.keq0653316
+        friendly_name: 'Schalfzimmer rechts'
+        unit_of_measurement: 'V'
+
+      ankleidezimmer_battery:
+        value_template: '{{ states.climate.leq1204934.attributes.battery }}'
+        entity_id: climate.leq1204934
+        friendly_name: 'Ankleidezimmer'
+        unit_of_measurement: 'V'
+
+      bad_pino_battery:
+        value_template: '{{ states.climate.leq1204884.attributes.battery }}'
+        entity_id: climate.leq1204884
+        friendly_name: 'Bad Pino'
+        unit_of_measurement: 'V'
+
+      buero_battery:
+        value_template: '{{ states.climate.leq1204674.attributes.battery }}'
+        entity_id: climate.leq1204674
+        friendly_name: 'Büro'
+        unit_of_measurement: 'V'
+
+      wohnzimmer_links_battery:
+        value_template: '{{ states.climate.keq0574494.attributes.battery }}'
+        entity_id: climate.keq0574494
+        friendly_name: 'Wohnzimmer links'
+        unit_of_measurement: 'V'
+
+      wohnzimmer_rechts_battery:
+        value_template: '{{ states.climate.keq0961116.attributes.battery }}'
+        entity_id: climate.keq0961116
+        friendly_name: 'Wohnzimmer rechts'
+        unit_of_measurement: 'V'
+
+

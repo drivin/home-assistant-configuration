@@ -1,0 +1,38 @@
+pino_1:
+  hide_if_away: true
+  icon:
+  mac:
+  name: Pino
+  picture: https://www.shareicon.net/download/2016/11/21/854776_darth_512x512.png
+  track: true
+  vendor:
+
+tinker_2:
+  hide_if_away: true
+  icon:
+  mac:
+  name: Tinker
+  picture: https://www.shareicon.net/download/2016/11/21/854779_ewok_434x512.png
+  track: true
+  vendor:
+
+Pino_PING:
+  hide_if_away: true
+  icon:
+  mac:
+  name: Pino
+  picture: https://www.shareicon.net/download/2016/11/21/854776_darth_512x512.png
+  track: true
+  vendor:
+
+Tinker_PING:
+  hide_if_away: true
+  icon:
+  mac:
+  name: Tinker
+  picture: https://www.shareicon.net/download/2016/11/21/854779_ewok_434x512.png
+  track: true
+  vendor:
+
+
+

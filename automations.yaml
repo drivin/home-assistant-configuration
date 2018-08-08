@@ -1,0 +1,50 @@
+- action:
+  - data_template:
+      payload: leave
+      topic: presence/{{ trigger.from_state.name }}
+    service: mqtt.publish
+  - data_template:
+      message: '{{ trigger.from_state.name }} ist nicht zu Hause'
+      title: <b>Abwesend</b>
+    service: notify.telegram_tinker
+  - data_template:
+      message: '{{ trigger.from_state.name }} ist nicht zu Hause'
+      title: <b>Abwesend</b>
+    service: notify.telegram_pino
+  alias: not_home
+  id: '1527345680809'
+  trigger:
+  - entity_id: device_tracker.pino_ping, device_tracker.tinker_ping
+    platform: state
+    to: not_home
+- action:
+  - data_template:
+      payload: join
+      topic: presence/{{ trigger.from_state.name }}
+    service: mqtt.publish
+  - data_template:
+      message: '{{ trigger.from_state.name }} ist zu Hause'
+      title: <b>Anwesend</b>
+    service: notify.telegram_tinker
+  - data_template:
+      message: '{{ trigger.from_state.name }} ist zu Hause'
+      title: <b>Anwesend</b>
+    service: notify.telegram_pino
+  alias: home
+  id: '1527345741832'
+  trigger:
+  - entity_id: device_tracker.pino_ping, device_tracker.tinker_ping
+    platform: state
+    to: home
+- action:
+  - data:
+      name: PmxMononight
+    service: frontend.set_theme
+  alias: set theme
+  condition: []
+  id: '1527704696232'
+  trigger:
+  - entity_id: device_tracker.tinker_ping
+    from: home
+    platform: state
+    to: not_home

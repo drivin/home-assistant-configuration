@@ -34,6 +34,7 @@ System_View:
   icon: mdi:wrench
   view: yes
   entities:
+    - group.system_stats
     - group.Anwesenheit
     - group.Ventilstellung
     - group.Batteriespannung
@@ -41,6 +42,22 @@ System_View:
 # / tabs
     
 # ! groups
+
+system_stats:
+  name: Systemstatus
+  entities:
+    - sensor.processor_use
+    - sensor.last_boot
+    - sensor.since_last_boot
+    - sensor.disk_use_percent
+    - sensor.disk_use
+    - sensor.disk_free
+    - sensor.memory_use_percent
+    - sensor.memory_use
+    - sensor.memory_free
+    - sensor.swap_use_percent
+    - sensor.swap_use
+    - sensor.swap_free
 
 multiroom:
   name: Multiroom

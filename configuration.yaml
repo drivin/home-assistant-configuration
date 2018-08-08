@@ -22,8 +22,9 @@ zone:
 shopping_list:
 
 panel_iframe: 
-  lms: 
+  lms:
     title: 'LMS' 
+    icon: mdi:mixcloud
     url: 'http://192.168.2.142:9000/m'
 
 frontend:
@@ -92,7 +93,6 @@ homematic:
       resolvenames: json
       #username: Admin
       #password: secret
-
   hosts:
     homegear:
       host: 127.0.0.1

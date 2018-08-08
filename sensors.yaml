@@ -9,6 +9,26 @@
   #  name: "Therme 2"
   #  value_template: 'info'
 
+  # System state
+  
+  - platform: systemmonitor
+    resources:
+      - type: processor_use
+      - type: last_boot
+      - type: since_last_boot
+      - type: disk_use_percent
+        arg: /
+      - type: disk_use
+        arg: /
+      - type: disk_free
+        arg: /
+      - type: memory_use_percent
+      - type: memory_use
+      - type: memory_free
+      - type: swap_use_percent
+      - type: swap_use
+      - type: swap_free
+      
   # Weather prediction
   - platform: yr
     friendly_name: Wetter    

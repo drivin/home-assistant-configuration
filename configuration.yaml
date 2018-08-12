@@ -28,6 +28,10 @@ panel_iframe:
     title: 'LMS' 
     icon: mdi:mixcloud
     url: 'http://192.168.2.142:9000/m'
+  nodered:
+    title: 'Node Red' 
+    icon: mdi:auto-fix
+    url: 'http://192.168.2.142:1880'
 
 frontend:
 

@@ -1,8 +1,8 @@
 # ! tabs
 
 
-Räume_View:
-#default_view:
+#Räume_View:
+default_view:
   name: Räume
   icon: mdi:home
   view: yes
@@ -21,7 +21,7 @@ Media:
   entities:
     - group.multiroom
     - group.other_players
-
+    
 Wetter_View:
   name: Wetter
   icon: mdi:cloud

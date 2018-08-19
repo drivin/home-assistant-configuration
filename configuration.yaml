@@ -38,9 +38,9 @@ frontend:
 config:
 
 http:
+  server_host: "::0" #listen only to ipv6
   api_password: !secret api_password
   base_url: !secret base_url
-#redirect hass to port 80 -> /sbin/iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8123
   server_port: 8123
   ip_ban_enabled: true
   login_attempts_threshold: 10

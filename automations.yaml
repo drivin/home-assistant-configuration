@@ -36,15 +36,3 @@
   - entity_id: device_tracker.pino_ping, device_tracker.tinker_ping
     platform: state
     to: home
-- action:
-  - data:
-      name: PmxMononight
-    service: frontend.set_theme
-  alias: set theme
-  condition: []
-  id: '1527704696232'
-  trigger:
-  - entity_id: device_tracker.tinker_ping
-    from: home
-    platform: state
-    to: not_home

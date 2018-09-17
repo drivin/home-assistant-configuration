@@ -13,7 +13,7 @@ homeassistant:
 
   customize: !include customize.yaml
 
-zeroconf:
+#zeroconf:
 
 zone:
   - name: Home
@@ -27,7 +27,7 @@ panel_iframe:
   lms:
     title: 'LMS' 
     icon: mdi:mixcloud
-    url: 'http://192.168.2.142:9000/m'
+    url: !secret lms_url
   nodered:
     title: 'Node Red' 
     icon: mdi:auto-fix
@@ -39,7 +39,6 @@ config:
 
 http:
   server_host: "::0" #listen only to ipv6
-  api_password: !secret api_password
   base_url: !secret base_url
   server_port: 8123
   ip_ban_enabled: true
@@ -80,13 +79,12 @@ history:
 logbook:
 
 #MariaDB
-#recorder:
-#  db_url: mysql://hass:hass@192.168.2.142/hass
-
 recorder:
+  db_url: !secret mysql_url
+
   # Delete events and states older than 1 week
-  purge_keep_days: 7
-  purge_interval: 1
+  #purge_keep_days: 7
+  #purge_interval: 1
 
 # Track the sun
 sun:
@@ -118,8 +116,11 @@ media_player:
   - platform: spotify
     client_id: !secret spotify_client_id
     client_secret: !secret spotify_client_secret
+    
   - platform: squeezebox
-    host: 192.168.2.184
+    host: 192.168.2.142
+    username: !secret lms_username
+    password: !secret lms_password
     
 telegram_bot:
   - platform: polling
@@ -131,10 +132,6 @@ telegram_bot:
       - 462233907
 
 notify:
-  - name: NOTIFIER_NAME
-    platform: html5
-    gcm_api_key: !secret gcm-api-key
-    gcm_sender_id: !secret gcm-sender-id
 
   - name: telegram_pino
     platform: telegram

@@ -36,8 +36,53 @@
   - platform: mqtt
     state_topic: 'homegear/0/plain/0/-1/Valve_Heater_On_Pos'
     name: 'Heizung EIN Ventilstellung'
-    value_template: 'payload'
 
+  - platform: mqtt
+    state_topic: 'homegear/0/plain/9/4/FAULT_REPORTING'
+    name: 'Kueche_fault'
+    friendly_name: 'Küche'
+
+  - platform: mqtt
+    state_topic: 'homegear/0/plain/8/4/FAULT_REPORTING'
+    name: 'Bad_Carina_fault'
+    friendly_name: 'Bad Carina'
+
+  - platform: mqtt
+    state_topic: 'homegear/0/plain/5/4/FAULT_REPORTING'
+    name: 'Schlafzimmer_links_fault'
+    friendly_name: 'Schlafzimmer_links'
+
+  - platform: mqtt
+    state_topic: 'homegear/0/plain/4/4/FAULT_REPORTING'
+    name: 'Schalfzimmer_rechts_fault'
+    friendly_name: 'Schlafzimmer rechts'
+    
+  - platform: mqtt
+    state_topic: 'homegear/0/plain/7/4/FAULT_REPORTING'
+    name: 'Ankleidezimmer_fault'
+    friendly_name: 'Ankleidezimmer'
+
+  - platform: mqtt
+    state_topic: 'homegear/0/plain/10/4/FAULT_REPORTING'
+    name: 'Bad_Pino_fault'
+    friendly_name: 'Bad Pino'
+
+  - platform: mqtt
+    state_topic: 'homegear/0/plain/3/4/FAULT_REPORTING'
+    name: 'Buero_fault'
+    friendly_name: 'Büro'
+
+  - platform: mqtt
+    state_topic: 'homegear/0/plain/2/4/FAULT_REPORTING'
+    name: 'Wohnzimmer_links_fault'
+    friendly_name: 'Wohnzimmer links'
+
+  - platform: mqtt
+    state_topic: 'homegear/0/plain/1/4/FAULT_REPORTING'
+    name: 'Wohnzimmer_rechts_fault'
+    friendly_name: 'Wohnzimmer rechts'
+    
+    
   - platform: mqtt
     state_topic: 'ds18b20/28-000004673ac5/temperature'
     name: Aussentemperatur    

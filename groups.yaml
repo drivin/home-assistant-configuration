@@ -36,6 +36,7 @@ System_View:
   entities:
     - group.system_stats
     - group.Anwesenheit
+    - group.Fehler
     - group.Ventilstellung
     - group.Batteriespannung
     
@@ -89,6 +90,7 @@ Wohnzimmer:
   entities:
     - climate.keq0574494
     - climate.keq0961116
+    - script.wohnzimmer_mood
     - light.wz_rgbw_1
     - light.wz_rgbw_2
     - light.wohnzimmer_stehlampe
@@ -160,4 +162,18 @@ Batteriespannung:
      - sensor.wohnzimmer_links_battery
      - sensor.wohnzimmer_rechts_battery
 
+Fehler:
+  name: Fehler
+  entities:
+     - sensor.kueche_fault
+     - sensor.bad_carina_fault
+     - sensor.schlafzimmer_wandthermostat_fault
+     - sensor.schlafzimmer_links_fault
+     - sensor.schlafzimmer_rechts_fault
+     - sensor.ankleidezimmer_fault
+     - sensor.bad_pino_fault
+     - sensor.buero_fault
+     - sensor.wohnzimmer_links_fault
+     - sensor.wohnzimmer_rechts_fault
+     
 # / groups

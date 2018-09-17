@@ -1,0 +1,6 @@
+wohnzimmer_mood:
+  sequence:
+    - service: hue.hue_activate_scene
+      data:
+        group_name: "Wohnzimmer"
+        scene_name: "Mood"

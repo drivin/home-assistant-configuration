@@ -1,6 +1,14 @@
 wohnzimmer_mood:
+  alias: Mood
   sequence:
-    - service: hue.hue_activate_scene
-      data:
-        group_name: "Wohnzimmer"
-        scene_name: "Mood"
+  - data:
+      group_name: Wohnzimmer
+      scene_name: Mood
+    service: hue.hue_activate_scene
+wohnzimmer_white:
+  alias: Wohnzimmer_White
+  sequence:
+  - data:
+      group_name: Wohnzimmer
+      scene_name: White
+    service: hue.hue_activate_scene

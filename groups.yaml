@@ -90,6 +90,7 @@ Wohnzimmer:
   entities:
     - climate.keq0574494
     - climate.keq0961116
+    - script.wohnzimmer_white
     - script.wohnzimmer_mood
     - light.wz_rgbw_1
     - light.wz_rgbw_2

@@ -28,16 +28,22 @@ Wetter_View:
   view: yes
   entities:
     - group.Wetter
-    
+
+Sicherheit_View:
+  name: Sicherheits
+  icon: mdi:security
+  view: yes
+  entities:
+    - group.Anwesenheit
+    - group.Kamera
+
 System_View:
   name: System
   icon: mdi:wrench
   view: yes
   entities:
-    - group.Sicherheit
     - group.system_tasks
     - group.system_stats
-    - group.Anwesenheit
     - group.Fehler
     - group.Ventilstellung
     - group.Batteriespannung
@@ -83,8 +89,8 @@ other_players:
     - media_player.receiver
     - media_player.spotify
 
-Sicherheit:
-  name: Sicherheit
+Kamera:
+  name: Kamera
   entities:
     - binary_sensor.door_cam
     - camera.door

@@ -43,14 +43,24 @@
     from: 'off'
     platform: state
     to: 'on'
-  condition: []
+  condition:
+  - condition: state
+    entity_id: device_tracker.tinker_ping
+    state: not_home
   action:
   - data: {}
     service: shell_command.cam_door_snapshot
   - data:
-      title: <b>Alarm Bewegungsmelder</b>
-      message: "That's an example that sends an image."
       data:
         photo:
           url: http://192.168.2.164:8082/lastsnap.jpg
+      message: Alarm Bewegungsmelder
+      title: <b>Alarm Bewegungsmelder</b>
     service: notify.telegram_pino
+  - data:
+      data:
+        photo:
+          url: http://192.168.2.164:8082/lastsnap.jpg
+      message: Alarm Bewegungsmelder
+      title: <b>Alarm Bewegungsmelder</b>
+    service: notify.telegram_tinker

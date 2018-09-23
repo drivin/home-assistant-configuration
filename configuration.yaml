@@ -37,6 +37,11 @@ frontend:
 
 config:
 
+logger:
+  default: warning
+  logs:
+    requests.packages.urllib3.connectionpool: critical
+
 http:
   server_host: "::0" #listen only to ipv6
   base_url: !secret base_url
@@ -114,7 +119,7 @@ mqtt:
   
 shell_command:
   restart_volumioone: ssh volumio@192.168.2.233 sudo '/sbin/reboot'
-  cam_door_snapshot: curl -s http://192.168.2.164:8080/0/action/snapshot > /dev/null 
+  cam_door_snapshot: curl -s http://192.168.2.164:8080/0/action/snapshot > /dev/null
   
 media_player:
   - platform: spotify
@@ -147,7 +152,7 @@ notify:
 
 camera:
   - platform: mjpeg
-    mjpeg_url: http://192.168.2.164:8081
+    mjpeg_url: 'http://192.168.2.164:8081'
     name: Door
 
 binary_sensor: !include binary_sensors.yaml

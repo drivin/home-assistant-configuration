@@ -60,8 +60,8 @@
     sensor.leq0003203_humidity:
       friendly_name: Luftfeuchtigkeit
 #
-    media_player.robotron:
-      friendly_name: VolumioZero
+    media_player.home:
+      friendly_name: VolumioMaster
     media_player.volumioone:
       friendly_name: VolumioOne
     media_player.squeezebox_radio:
@@ -69,3 +69,10 @@
 #
     script.wohnzimmer_mood:
       friendly_name: Mood
+      icon: mdi:lightbulb
+    script.wohnzimmer_white:
+      friendly_name: White
+      icon: mdi:lightbulb
+    script.restart_volumioone:
+      friendly_name: reboot VolumioOne
+      icon: mdi:refresh

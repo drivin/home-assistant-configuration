@@ -111,7 +111,11 @@ mqtt:
   keepalive: 3600
   username: !secret mqtt_username
   password: !secret mqtt_password
-
+  
+shell_command:
+  restart_volumioone: ssh volumio@192.168.2.233 sudo '/sbin/reboot'
+  cam_door_snapshot: curl -s http://192.168.2.164:8080/0/action/snapshot > /dev/null 
+  
 media_player:
   - platform: spotify
     client_id: !secret spotify_client_id
@@ -141,6 +145,12 @@ notify:
     platform: telegram
     chat_id: !secret telegram_tinker
 
+camera:
+  - platform: mjpeg
+    mjpeg_url: http://192.168.2.164:8081
+    name: Door
+
+binary_sensor: !include binary_sensors.yaml
 sensor: !include sensors.yaml
 group: !include groups.yaml
 automation: !include automations.yaml

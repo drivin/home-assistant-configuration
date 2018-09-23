@@ -36,3 +36,21 @@
   - entity_id: device_tracker.pino_ping, device_tracker.tinker_ping
     platform: state
     to: home
+- id: '1537602560985'
+  alias: cam alert door
+  trigger:
+  - entity_id: binary_sensor.door_cam
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data: {}
+    service: shell_command.cam_door_snapshot
+  - data:
+      title: <b>Alarm Bewegungsmelder</b>
+      message: "That's an example that sends an image."
+      data:
+        photo:
+          url: http://192.168.2.164:8082/lastsnap.jpg
+    service: notify.telegram_pino

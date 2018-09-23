@@ -54,7 +54,7 @@
 
   - platform: mqtt
     state_topic: 'homegear/0/plain/4/4/FAULT_REPORTING'
-    name: 'Schalfzimmer_rechts_fault'
+    name: 'Schlafzimmer_rechts_fault'
     friendly_name: 'Schlafzimmer rechts'
     
   - platform: mqtt
@@ -200,4 +200,17 @@
         friendly_name: 'Wohnzimmer rechts'
         unit_of_measurement: 'V'
 
+        
+      plw_sensor_last_update:
+        value_template: "{% if states.sensor.power_line_watts %}{{(as_timestamp(now())-as_timestamp(states.sensor.power_line_watts.last_updated)) | int }}{% else %}??{% endif %}"
+        unit_of_measurement: 'sec'
+        entity_id:
+          - sensor.time
+          - sensor.power_line_watts
 
+      wohnzimmmer_rechts_info:
+        value_template: "{{ states(sensor.wohnzimmer_rechts_battery)}}"
+        entity_id:
+          - sensor.wohnzimmer_rechts_battery
+          - sensor.wohnzimmer_rechts_valve
+          - sensor.wohnzimmer_rechts_fault

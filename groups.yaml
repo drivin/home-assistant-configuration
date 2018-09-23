@@ -34,6 +34,8 @@ System_View:
   icon: mdi:wrench
   view: yes
   entities:
+    - group.Sicherheit
+    - group.system_tasks
     - group.system_stats
     - group.Anwesenheit
     - group.Fehler
@@ -44,9 +46,16 @@ System_View:
     
 # ! groups
 
+system_tasks:
+  name: Systemfunktionen
+  entities:
+    - script.restart_volumioone
+    - script.cam_door_snapshot
+
 system_stats:
   name: Systemstatus
   entities:
+    - sensor.wohnzimmer_rechts_info
     - sensor.processor_use
     - sensor.last_boot
     - sensor.since_last_boot
@@ -70,9 +79,16 @@ multiroom:
 other_players:
   name: "other players"
   entities:
+    - media_player.tv
     - media_player.receiver
     - media_player.spotify
 
+Sicherheit:
+  name: Sicherheit
+  entities:
+    - binary_sensor.door_cam
+    - camera.door
+    
 Anwesenheit:
   name: Anwesenheit
   entities:

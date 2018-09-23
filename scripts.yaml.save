@@ -1,4 +1,6 @@
 wohnzimmer_mood:
+
+
   alias: Mood
   sequence:
   - data:
@@ -17,8 +19,3 @@ restart_volumioone:
   sequence:
   - data: {}
     service: shell_command.restart_volumioone
-cam_door_snapshot:
-  alias: Cam Door Snapshot
-  sequence:
-  - data: {}
-    service: shell_command.cam_door_snapshot

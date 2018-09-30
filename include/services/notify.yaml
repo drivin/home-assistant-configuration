@@ -1,0 +1,11 @@
+- name: telegram_pino
+  platform: telegram
+  chat_id: !secret telegram_chatID_pino   
+
+- name: telegram_tinker
+  platform: telegram
+  chat_id: !secret telegram_chatID_tinker
+
+- name: telegram_group
+  platform: telegram
+  chat_id: !secret telegram_chatID_group

@@ -41,47 +41,145 @@
     state_topic: 'homegear/0/plain/9/4/FAULT_REPORTING'
     name: 'Kueche_fault'
     friendly_name: 'Küche'
-
+    value_template: >-
+      {% if ('sensor.Kueche_fault','0') %}OK
+      {% elif ('sensor.Kueche_fault','1')%}VALVE_TIGHT
+      {% elif ('sensor.Kueche_fault','2')%}ADJUSTMENT_RANGE_TOO_LARGE
+      {% elif ('sensor.Kueche_fault','3')%}ADJUSTMENT_RANGE_TOO_SMALL
+      {% elif ('sensor.Kueche_fault','4')%}COMMUNICATION_ERROR
+      {% elif ('sensor.Kueche_fault','5')%}-
+      {% elif ('sensor.Kueche_fault','6')%}LOWBAT
+      {% elif ('sensor.Kueche_fault','7')%}VALVE_ERROR_POSITION
+      {% else %}UNKNOWN
+      {% endif %}
+    
   - platform: mqtt
     state_topic: 'homegear/0/plain/8/4/FAULT_REPORTING'
     name: 'Bad_Carina_fault'
     friendly_name: 'Bad Carina'
-
+    value_template: >-
+      {% if ('sensor.Bad_Carina_fault','0') %}OK
+      {% elif ('sensor.Bad_Carina_fault','1')%}VALVE_TIGHT
+      {% elif ('sensor.Bad_Carina_fault','2')%}ADJUSTMENT_RANGE_TOO_LARGE
+      {% elif ('sensor.Bad_Carina_fault','3')%}ADJUSTMENT_RANGE_TOO_SMALL
+      {% elif ('sensor.Bad_Carina_fault','4')%}COMMUNICATION_ERROR
+      {% elif ('sensor.Bad_Carina_fault','5')%}-
+      {% elif ('sensor.Bad_Carina_fault','6')%}LOWBAT
+      {% elif ('sensor.Bad_Carina_fault','7')%}VALVE_ERROR_POSITION
+      {% else %}UNKNOWN
+      {% endif %}
+      
   - platform: mqtt
     state_topic: 'homegear/0/plain/5/4/FAULT_REPORTING'
     name: 'Schlafzimmer_links_fault'
     friendly_name: 'Schlafzimmer_links'
-
+    value_template: >-
+      {% if ('sensor.Schlafzimmer_links_fault','0') %}OK
+      {% elif ('sensor.Schlafzimmer_links_fault','1')%}VALVE_TIGHT
+      {% elif ('sensor.Schlafzimmer_links_fault','2')%}ADJUSTMENT_RANGE_TOO_LARGE
+      {% elif ('sensor.Schlafzimmer_links_fault','3')%}ADJUSTMENT_RANGE_TOO_SMALL
+      {% elif ('sensor.Schlafzimmer_links_fault','4')%}COMMUNICATION_ERROR
+      {% elif ('sensor.Schlafzimmer_links_fault','5')%}-
+      {% elif ('sensor.Schlafzimmer_links_fault','6')%}LOWBAT
+      {% elif ('sensor.Schlafzimmer_links_fault','7')%}VALVE_ERROR_POSITION
+      {% else %}UNKNOWN
+      {% endif %}
+      
   - platform: mqtt
     state_topic: 'homegear/0/plain/4/4/FAULT_REPORTING'
     name: 'Schlafzimmer_rechts_fault'
     friendly_name: 'Schlafzimmer rechts'
-    
+    value_template: >-
+      {% if ('sensor.Schlafzimmer_rechts_fault','0') %}OK
+      {% elif ('sensor.Schlafzimmer_rechts_fault','1')%}VALVE_TIGHT
+      {% elif ('sensor.Schlafzimmer_rechts_fault','2')%}ADJUSTMENT_RANGE_TOO_LARGE
+      {% elif ('sensor.Schlafzimmer_rechts_fault','3')%}ADJUSTMENT_RANGE_TOO_SMALL
+      {% elif ('sensor.Schlafzimmer_rechts_fault','4')%}COMMUNICATION_ERROR
+      {% elif ('sensor.Schlafzimmer_rechts_fault','5')%}-
+      {% elif ('sensor.Schlafzimmer_rechts_fault','6')%}LOWBAT
+      {% elif ('sensor.Schlafzimmer_rechts_fault','7')%}VALVE_ERROR_POSITION
+      {% else %}UNKNOWN
+      {% endif %}
+      
   - platform: mqtt
     state_topic: 'homegear/0/plain/7/4/FAULT_REPORTING'
     name: 'Ankleidezimmer_fault'
     friendly_name: 'Ankleidezimmer'
-
+    value_template: >-
+      {% if ('sensor.Ankleidezimmer_fault','0') %}OK
+      {% elif ('sensor.Ankleidezimmer_fault','1')%}VALVE_TIGHT
+      {% elif ('sensor.Ankleidezimmer_fault','2')%}ADJUSTMENT_RANGE_TOO_LARGE
+      {% elif ('sensor.Ankleidezimmer_fault','3')%}ADJUSTMENT_RANGE_TOO_SMALL
+      {% elif ('sensor.Ankleidezimmer_fault','4')%}COMMUNICATION_ERROR
+      {% elif ('sensor.Ankleidezimmer_fault','5')%}-
+      {% elif ('sensor.Ankleidezimmer_fault','6')%}LOWBAT
+      {% elif ('sensor.Ankleidezimmer_fault','7')%}VALVE_ERROR_POSITION
+      {% else %}UNKNOWN
+      {% endif %}
+      
   - platform: mqtt
     state_topic: 'homegear/0/plain/10/4/FAULT_REPORTING'
     name: 'Bad_Pino_fault'
     friendly_name: 'Bad Pino'
-
+    value_template: >-
+      {% if ('sensor.Bad_Pino_fault','0') %}OK
+      {% elif ('sensor.Bad_Pino_fault','1')%}VALVE_TIGHT
+      {% elif ('sensor.Bad_Pino_fault','2')%}ADJUSTMENT_RANGE_TOO_LARGE
+      {% elif ('sensor.Bad_Pino_fault','3')%}ADJUSTMENT_RANGE_TOO_SMALL
+      {% elif ('sensor.Bad_Pino_fault','4')%}COMMUNICATION_ERROR
+      {% elif ('sensor.Bad_Pino_fault','5')%}-
+      {% elif ('sensor.Bad_Pino_fault','6')%}LOWBAT
+      {% elif ('sensor.Bad_Pino_fault','7')%}VALVE_ERROR_POSITION
+      {% else %}UNKNOWN
+      {% endif %}
+      
   - platform: mqtt
     state_topic: 'homegear/0/plain/3/4/FAULT_REPORTING'
     name: 'Buero_fault'
     friendly_name: 'Büro'
-
+    value_template: >-
+      {% if ('sensor.Buero_fault','0') %}OK
+      {% elif ('sensor.Buero_fault','1')%}VALVE_TIGHT
+      {% elif ('sensor.Buero_fault','2')%}ADJUSTMENT_RANGE_TOO_LARGE
+      {% elif ('sensor.Buero_fault','3')%}ADJUSTMENT_RANGE_TOO_SMALL
+      {% elif ('sensor.Buero_fault','4')%}COMMUNICATION_ERROR
+      {% elif ('sensor.Buero_fault','5')%}-
+      {% elif ('sensor.Buero_fault','6')%}LOWBAT
+      {% elif ('sensor.Buero_fault','7')%}VALVE_ERROR_POSITION
+      {% else %}UNKNOWN
+      {% endif %}
+      
   - platform: mqtt
     state_topic: 'homegear/0/plain/2/4/FAULT_REPORTING'
     name: 'Wohnzimmer_links_fault'
     friendly_name: 'Wohnzimmer links'
-
+    value_template: >-
+      {% if ('sensor.Wohnzimmer_links_fault','0') %}OK
+      {% elif ('sensor.Wohnzimmer_links_fault','1')%}VALVE_TIGHT
+      {% elif ('sensor.Wohnzimmer_links_fault','2')%}ADJUSTMENT_RANGE_TOO_LARGE
+      {% elif ('sensor.Wohnzimmer_links_fault','3')%}ADJUSTMENT_RANGE_TOO_SMALL
+      {% elif ('sensor.Wohnzimmer_links_fault','4')%}COMMUNICATION_ERROR
+      {% elif ('sensor.Wohnzimmer_links_fault','5')%}-
+      {% elif ('sensor.Wohnzimmer_links_fault','6')%}LOWBAT
+      {% elif ('sensor.Wohnzimmer_links_fault','7')%}VALVE_ERROR_POSITION
+      {% else %}UNKNOWN
+      {% endif %}
+      
   - platform: mqtt
     state_topic: 'homegear/0/plain/1/4/FAULT_REPORTING'
     name: 'Wohnzimmer_rechts_fault'
     friendly_name: 'Wohnzimmer rechts'
-    
+    value_template: >-
+      {% if ('sensor.Wohnzimmer_rechts_fault','0') %}OK
+      {% elif ('sensor.Wohnzimmer_rechts_fault','1')%}VALVE_TIGHT
+      {% elif ('sensor.Wohnzimmer_rechts_fault','2')%}ADJUSTMENT_RANGE_TOO_LARGE
+      {% elif ('sensor.Wohnzimmer_rechts_fault','3')%}ADJUSTMENT_RANGE_TOO_SMALL
+      {% elif ('sensor.Wohnzimmer_rechts_fault','4')%}COMMUNICATION_ERROR
+      {% elif ('sensor.Wohnzimmer_rechts_fault','5')%}-
+      {% elif ('sensor.Wohnzimmer_rechts_fault','6')%}LOWBAT
+      {% elif ('sensor.Wohnzimmer_rechts_fault','7')%}VALVE_ERROR_POSITION
+      {% else %}UNKNOWN
+      {% endif %}
     
   - platform: mqtt
     state_topic: 'ds18b20/28-000004673ac5/temperature'
@@ -199,18 +297,3 @@
         entity_id: climate.keq0961116
         friendly_name: 'Wohnzimmer rechts'
         unit_of_measurement: 'V'
-
-        
-      plw_sensor_last_update:
-        value_template: "{% if states.sensor.power_line_watts %}{{(as_timestamp(now())-as_timestamp(states.sensor.power_line_watts.last_updated)) | int }}{% else %}??{% endif %}"
-        unit_of_measurement: 'sec'
-        entity_id:
-          - sensor.time
-          - sensor.power_line_watts
-
-      wohnzimmmer_rechts_info:
-        value_template: "{{ states(sensor.wohnzimmer_rechts_battery)}}"
-        entity_id:
-          - sensor.wohnzimmer_rechts_battery
-          - sensor.wohnzimmer_rechts_valve
-          - sensor.wohnzimmer_rechts_fault

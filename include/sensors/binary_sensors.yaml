@@ -1,0 +1,4 @@
+- platform: mqtt
+  state_topic: "cam/door"
+  name: door_cam
+  sensor_class: motion

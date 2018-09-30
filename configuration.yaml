@@ -11,7 +11,7 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Berlin
 
-  customize: !include customize.yaml
+  customize: !include include/customize/customize.yaml
 
 #zeroconf:
 
@@ -40,34 +40,12 @@ config:
 logger:
   default: warning
   logs:
-    requests.packages.urllib3.connectionpool: critical
-
-http:
-  server_host: "::0" #listen only to ipv6
-  base_url: !secret base_url
-  server_port: 8123
-  ip_ban_enabled: true
-  login_attempts_threshold: 10
-#  ssl_certificate: /home/homeassistant/.homeassistant/cert.pem
-#  ssl_key: /home/homeassistant/.homeassistant/privkey.pem
+    requests.packages.urllib3.connectionpool: critical #log only critical from urllib3.connectionpool
 
 ifttt:
   key: !secret ifttt_key
 
-device_tracker:
-  - platform: owntracks
-    max_gps_accuracy: 500
-    waypoints: True
-  - platform: ping
-    consider_home: 45
-    count: 5
-    hosts:
-      Tinker_PING: 192.168.2.177
-      Pino_PING: 192.168.2.1
-#  - platform: nmap_tracker
-#    hosts: 192.168.2.0/24
-#    home_interval: 10
-#    scan_options: " --privileged -sP "
+
   
 updater:
   include_used_components: true
@@ -87,7 +65,7 @@ logbook:
 recorder:
   db_url: !secret mysql_url
 
-  # Delete events and states older than 1 week
+  #Delete events and states older than 1 week
   #purge_keep_days: 7
   #purge_interval: 1
 
@@ -121,42 +99,19 @@ shell_command:
   restart_volumioone: ssh volumio@192.168.2.233 sudo '/sbin/reboot'
   cam_door_snapshot: curl -s http://192.168.2.164:8080/0/action/snapshot > /dev/null
   
-media_player:
-  - platform: spotify
-    client_id: !secret spotify_client_id
-    client_secret: !secret spotify_client_secret
-    
-  - platform: squeezebox
-    host: 192.168.2.142
-    username: !secret lms_username
-    password: !secret lms_password
-    
-telegram_bot:
-  - platform: polling
-    name : telegram
-    parse_mode: html
-    api_key: !secret telegram_api_key
-    allowed_chat_ids:
-      - 519101236
-      - 462233907
+http: !include include/system/http.yaml
 
-notify:
+media_player: !include include/services/media_player.yaml
+telegram_bot: !include include/services/telegram.yaml
 
-  - name: telegram_pino
-    platform: telegram
-    chat_id: !secret telegram_pino   
+device_tracker: !include include/services/device_tracker.yaml
+notify: !include include/services/notify.yaml
+camera: !include include/services/camera.yaml
 
-  - name: telegram_tinker
-    platform: telegram
-    chat_id: !secret telegram_tinker
+binary_sensor: !include include/sensors/binary_sensors.yaml
+sensor: !include include/sensors/sensors.yaml
 
-camera:
-  - platform: mjpeg
-    mjpeg_url: 'http://192.168.2.164:8081'
-    name: Door
+group: !include include/customize/groups.yaml
 
-binary_sensor: !include binary_sensors.yaml
-sensor: !include sensors.yaml
-group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml

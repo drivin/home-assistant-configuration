@@ -42,6 +42,8 @@ System_View:
   icon: mdi:wrench
   view: yes
   entities:
+    - group.heizung
+    - script.1537850939518
     - group.system_tasks
     - group.system_stats
     - group.Fehler

@@ -1,0 +1,5 @@
+server_host: "::0" #listen only to ipv6
+base_url: !secret base_url
+server_port: 8123
+ip_ban_enabled: true
+login_attempts_threshold: 10

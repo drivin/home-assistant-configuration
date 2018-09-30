@@ -1,4 +1,4 @@
-HA Version 0.79.0.dev0
+HA Version 0.80.0.dev0
 
 mqtt
 spotify

@@ -22,3 +22,29 @@ cam_door_snapshot:
   sequence:
   - data: {}
     service: shell_command.cam_door_snapshot
+  - data:
+      data:
+        photo:
+          url: http://192.168.2.164:8082/lastsnap.jpg
+      message: Alarm Bewegungsmelder
+      title: <b>Alarm Bewegungsmelder</b>
+    service: notify.telegram_group
+  - delay: 00:00:02
+  - data: {}
+    service: script.cam_door_snapshot_recall
+cam_door_snapshot_recall:
+  alias: ' Cam Door Snapshot recall'
+  sequence:
+  - data: {}
+    service: script.cam_door_snapshot
+'1537850939518':
+  alias: Heizung auf 5°C test
+  sequence:
+  - data:
+      entity_id: climate.keq0574494
+      temperature: '5'
+    service: climate.set_temperature
+  - data:
+      entity_id: climate.*
+      temperature: '5'
+    service: climate.set_temperature

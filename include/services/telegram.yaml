@@ -1,0 +1,9 @@
+- platform: webhooks
+  name : telegram
+  parse_mode: html
+  api_key: !secret telegram_api_key
+  trusted_networks: !secret telegram_trusted_networks
+  allowed_chat_ids:
+    - !secret telegram_chatID_group
+    - !secret telegram_chatID_pino
+    - !secret telegram_chatID_tinker

@@ -1,43 +1,35 @@
-- action:
-  - data_template:
-      payload: leave
-      topic: presence/{{ trigger.from_state.name }}
-    service: mqtt.publish
-  - data_template:
-      message: '{{ trigger.from_state.name }} ist nicht zu Hause'
-      title: <b>Abwesend</b>
-    service: notify.telegram_tinker
-  - data_template:
-      message: '{{ trigger.from_state.name }} ist nicht zu Hause'
-      title: <b>Abwesend</b>
-    service: notify.telegram_pino
+- id: '1527345680809'
   alias: not_home
-  id: '1527345680809'
   trigger:
   - entity_id: device_tracker.pino_ping, device_tracker.tinker_ping
     platform: state
     to: not_home
-- action:
-  - data_template:
-      payload: join
+  action:
+  - data:
+      payload: leave
       topic: presence/{{ trigger.from_state.name }}
     service: mqtt.publish
   - data_template:
-      message: '{{ trigger.from_state.name }} ist zu Hause'
-      title: <b>Anwesend</b>
-    service: notify.telegram_tinker
-  - data_template:
-      message: '{{ trigger.from_state.name }} ist zu Hause'
-      title: <b>Anwesend</b>
-    service: notify.telegram_pino
+      message: '{{trigger.from_state.name}} ist nicht zu Hause'
+      title: <b>Abwesend</b>
+    service: notify.telegram_group
+- id: '1527345741832'
   alias: home
-  id: '1527345741832'
   trigger:
   - entity_id: device_tracker.pino_ping, device_tracker.tinker_ping
     platform: state
     to: home
+  action:
+  - data:
+      payload: join
+      topic: presence/{{ trigger.from_state.name }}
+    service: mqtt.publish
+  - data_template:
+      message: '{{trigger.from_state.name}} ist zu Hause'
+      title: <b>Anwesend</b>
+    service: notify.telegram_group
 - id: '1537602560985'
-  alias: cam alert door
+  alias: cam door alert
   trigger:
   - entity_id: binary_sensor.door_cam
     from: 'off'
@@ -49,18 +41,4 @@
     state: not_home
   action:
   - data: {}
-    service: shell_command.cam_door_snapshot
-  - data:
-      data:
-        photo:
-          url: http://192.168.2.164:8082/lastsnap.jpg
-      message: Alarm Bewegungsmelder
-      title: <b>Alarm Bewegungsmelder</b>
-    service: notify.telegram_pino
-  - data:
-      data:
-        photo:
-          url: http://192.168.2.164:8082/lastsnap.jpg
-      message: Alarm Bewegungsmelder
-      title: <b>Alarm Bewegungsmelder</b>
-    service: notify.telegram_tinker
+    service: script.cam_door_snapshot
